@@ -1,0 +1,89 @@
+[
+    {
+        "año": "2000",
+        "nombre": "Tiger Woods",
+        "deporte": "Golf"
+    },{
+        "año": "2001",
+        "nombre": "Tiger Woods",
+        "deporte": "Golf"
+    },{
+        "año": "2002",
+        "nombre": "Michael Schumacher",
+        "deporte": "Automovilismo"
+    },{
+        "año": "2003",
+        "nombre": "Lance Amstrong",
+        "deporte": "Golf"
+    },{
+        "año": "2004",
+        "nombre": "Michael Schumacher",
+        "deporte": "Automovilismo"
+    },{
+        "año": "2005",
+        "nombre": "Roger Federer",
+        "deporte": "Tenis"
+    },{
+        "año": "2006",
+        "nombre": "Roger Federer",
+        "deporte": "Tenis"
+    },{
+        "año": "2007",
+        "nombre": "Roger Federer",
+        "deporte": "Tenis"
+    },{
+        "año": "2009",
+        "nombre": "Usain Bolt",
+        "deporte": "Atletismo"
+    },{
+        "año": "2010",
+        "nombre": "Usain Bolt",
+        "deporte": "Atletismo"
+    },{
+        "año": "2011",
+        "nombre": "Rafael Nadal",
+        "deporte": "Tenis"
+    },{
+        "año": "2012",
+        "nombre": "Novak Djokovic",
+        "deporte": "Tenis"
+    },{
+        "año": "2013",
+        "nombre": "Usain Bolt",
+        "deporte": "Atletismo"
+    },{
+        "año": "2014",
+        "nombre": "Sebastian Vettel",
+        "deporte": "Automovilismo"
+    },{
+        "año": "2015",
+        "nombre": "Novak Djokovic",
+        "deporte": "Tenis"
+    },{
+        "año": "2016",
+        "nombre": "Novak Djokovic",
+        "deporte": "Tenis"
+    },{
+        "año": "2017",
+        "nombre": "Usain Bolt",
+        "deporte": "Atletismo"
+    },{
+        "año": "2018",
+        "nombre": "Roger Federer",
+        "deporte": "Tenis"
+    },{
+        "año": "2019",
+        "nombre": "Novak Djokovic",
+        "deporte": "Tenis"
+    },{
+        "año": "2020",
+        "nombre": "Lionel Messi",
+        "deporte": "Fútbol"
+    },{
+        "año": "2021",
+        "nombre": "Rafael Nadal",
+        "deporte": "Tenis"
+    }
+   
+]
+	
