@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags wagtailimages_tags %}
+{% block extra_css %}
+<style>
+*{box-sizing:border-box;}
+
+form{
+	width:500px;
+	padding:16px;
+	border-radius:10px;
+	margin:auto;
+	background-color:#ccc;
+}
+
+form label{
+	width:72px;
+	font-weight:bold;
+	display:inline-block;
+}
+
+form input[type="text"],
+form input[type="email"]{
+	width:180px;
+	padding:3px 10px;
+	border:1px solid #f6f6f6;
+	border-radius:3px;
+	background-color:#f6f6f6;
+	margin:8px 0;
+	display:inline-block;
+}
+
+form input[type="submit"]{
+	width:100%;
+	padding:8px 16px;
+	margin-top:32px;
+	border:1px solid #000;
+	border-radius:5px;
+	display:block;
+	color:#fff;
+	background-color:#000;
+} 
+
+form input[type="submit"]:hover{
+	cursor:pointer;
+}
+
+textarea{
+	width:100%;
+	height:100px;
+	border:1px solid #f6f6f6;
+	border-radius:3px;
+	background-color:#f6f6f6;			
+	margin:8px 0;
+	/*resize: vertical | horizontal | none | both*/
+	resize:none;
+	display:block;
+}
+</style>
+{% endblock %}
+{% block content %}
+
+
+
+            <h1 class="page-title">{{ page.title }}</h1>
+            <br>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            {% if page.intro %}
+                <p class="intro">{{ page.intro|richtext }}</p>
+            {% endif %}
+            {% if page.body %}
+                {{ page.body|richtext }}
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 form-page">
+        {% comment %}
+        You could render your form using a Django rendering shortcut such as `{{ form.as_p }}` but that will tend towards unsemantic code, and make it difficult to style. You can read more on Django form at:
+        https://docs.djangoproject.com/en/3.2/topics/forms/#form-rendering-options
+        {% endcomment %}
+            <form action="{% pageurl page %}" method="POST" role="form">
+                {% csrf_token %}
+                {% if form.subject.errors %}
+                    <ol role="alertdialog">
+                    {% for error in form.subject.errors %}
+                        <li role="alert"><strong>{{ error|escape }}</strong></li>
+                    {% endfor %}
+                    </ol>
+                {% endif %}
+
+                {% for field in form %}
+                    <div class="fieldWrapper" aria-required={% if field.field.required %}"true"{% else %}"false"{% endif %}>
+                        
+                        {{ field.label_tag }}{% if field.field.required %}<span class="required"></span>{% endif %}
+
+                        {{ field }}
+                        
+                        {% if field.help_text %}
+                            <p class="help">{{ field.help_text|safe }}</p>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+
+                <button type="submit" class="btn btn-primary">Contacta con nosotros</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}

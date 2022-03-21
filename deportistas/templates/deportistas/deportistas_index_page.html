@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags %}
+
+{% block body_class %}template-deportistasindexpage{% endblock %}
+
+
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css">
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container" style="position : relative;width : 2000px;height : 99.99%;margin : 0;
+padding : 0;">
+    <h1 class="page-title">{{ page.title }}</h1><br>
+
+    <p>Listado de las mejores deportistas de cada año:</p>
+    <hr>
+
+    <table id="deportistas">
+        <thead>
+            <tr>
+                <td>Nombre</td>
+
+                <td>Año</td>
+
+                <td>Deporte</td>
+
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for deportistas in deportistas %}
+            <tr>
+                <td>{{deportistas.nombre}}</td>
+                <td>{{deportistas.year}}</td>
+                <td>{{deportistas.deporte}}</td>
+
+            </tr>
+
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script type="text/javascript" src="//code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="//cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="/i18n/es_es.json"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#deportistas').DataTable({
+            language: {
+                url: '//cdn.datatables.net/plug-ins/1.11.4/i18n/es_es.json'
+            }
+        });
+    });
+</script>
+{% endblock %}

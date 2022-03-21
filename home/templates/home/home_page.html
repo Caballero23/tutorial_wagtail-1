@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+{% load wagtailcore_tags %}
+
+{% block body_class %}template-homepage{% endblock %}
+
+{% block extra_css %}
+
+{% endblock extra_css %}
+
+{% block content %}
+<div class="container mt-5">
+    {% load wagtailcore_tags blog_tags %}
+
+{{page.body | richtext}}
+<div class="col-md-10">
+
+    {% if page.categories.all.count %}
+      {% categories_list %}
+    {% endif %}
+  
+  
+    {% if page.noticias.all.count %}
+    {% else %}
+    {% noticias_list %}
+    {% endif %}
+  
+    
+  
+  </div>
+</div>
+{% endblock content %}
